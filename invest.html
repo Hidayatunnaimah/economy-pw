@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator Investasi - nginvest</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="asset/css/style.css" />
   </head>
   <body>
     <header class="header">
-      <h1>Kalkulator Investasi</h1>
+      <h1>NGINVest</h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -18,20 +18,53 @@
       </nav>
     </header>
 
-    <section class="content">
-      <label>Modal awal:</label>
-      <input id="awal" type="number" /><br />
-
-      <label>Bunga (% per tahun):</label>
-      <input id="bunga" type="number" /><br />
-
-      <label>Durasi (tahun):</label>
-      <input id="tahun" type="number" /><br />
-
-      <button onclick="calcInvest()">Hitung</button>
-      <p id="investResult"></p>
+    <section class="invest-hero">
+      <h2>Kalkulator Investasi Tanpa Top Up</h2>
+      <p>Simulasikan pertumbuhan modal Anda dengan cepat dan sederhana</p>
     </section>
 
-    <script src="script.js"></script>
+    <section class="invest-section">
+      <div class="invest-card">
+        <div class="invest-form">
+          <div class="form-group">
+            <label for="invest-modal">Modal Awal (Rp)</label>
+            <input id="invest-modal" type="number" placeholder="Contoh: 10000000" min="0" />
+          </div>
+
+          <div class="form-group">
+            <label for="invest-return">Return (% per tahun)</label>
+            <input id="invest-return" type="number" placeholder="Contoh: 12" min="0" step="0.1" />
+          </div>
+
+          <div class="form-group">
+            <label for="invest-duration">Lama Investasi (tahun)</label>
+            <input id="invest-duration" type="number" placeholder="Contoh: 5" min="1" />
+          </div>
+
+          <button class="calc-button" onclick="calcInvest()">Hitung Investasi</button>
+        </div>
+
+        <div class="invest-results" id="invest-result-card" style="display: none;">
+          <h3>Hasil Investasi</h3>
+          <div class="result-summary">
+            <div class="summary-item">
+              <span class="summary-label">Total Akhir</span>
+              <span class="summary-value" id="invest-total">Rp 0</span>
+            </div>
+            <div class="summary-item highlight">
+              <span class="summary-label">Keuntungan Bersih</span>
+              <span class="summary-value" id="invest-profit">Rp 0</span>
+            </div>
+          </div>
+          <p class="invest-note">Simulasi ini menggunakan metode bunga berbunga tahunan tanpa top up tambahan.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 NGINVest - Kelompok 5</p>
+    </footer>
+
+    <script src="asset/js/script.js"></script>
   </body>
 </html>

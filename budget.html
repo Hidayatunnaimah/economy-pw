@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator Budget - nginvest</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="asset/css/style.css" />
   </head>
   <body>
     <header class="header">
-      <h1>Kalkulator Budget</h1>
+      <h1>NGINVest</h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -17,17 +18,101 @@
       </nav>
     </header>
 
-    <section class="content">
-      <label>Pemasukan:</label>
-      <input id="income" type="number" /><br />
-
-      <label>Pengeluaran:</label>
-      <input id="expense" type="number" /><br />
-
-      <button onclick="calcBudget()">Hitung</button>
-      <p id="budgetResult"></p>
+    <section class="calculator-hero">
+      <h2>Kalkulator Budget</h2>
+      <p>Hitung alokasi budget ideal Anda dengan aturan 50-30-20</p>
     </section>
 
-    <script src="script.js"></script>
+    <section class="calculator-section">
+      <div class="calculator-container">
+        <div class="calculator-form">
+          <h3>Masukkan Data Keuangan Anda</h3>
+
+          <div class="form-group">
+            <label for="gaji">Gaji Bulanan (Rp)</label>
+            <input id="gaji" type="number" placeholder="Contoh: 5000000" min="0" />
+          </div>
+
+          <div class="form-group">
+            <label for="pengeluaran-tetap">Pengeluaran Tetap (Rp)</label>
+            <input id="pengeluaran-tetap" type="number" placeholder="Kos, makan, transport, dll." min="0" />
+            <small>Kebutuhan pokok yang harus dibayar setiap bulan</small>
+          </div>
+
+          <div class="form-group">
+            <label for="pengeluaran-variabel">Pengeluaran Variabel (Rp)</label>
+            <input id="pengeluaran-variabel" type="number" placeholder="Hiburan, belanja, dll." min="0" />
+            <small>Pengeluaran yang bisa disesuaikan</small>
+          </div>
+
+          <div class="form-group">
+            <label for="cicilan">Cicilan (Rp) <span class="optional">(Opsional)</span></label>
+            <input id="cicilan" type="number" placeholder="Kredit, cicilan, dll." min="0" />
+            <small>Biaya cicilan bulanan jika ada</small>
+          </div>
+
+          <button class="calc-button" onclick="calcBudget()">Hitung Budget</button>
+        </div>
+
+        <div class="calculator-result" id="result-container" style="display: none;">
+          <h3>Hasil Perhitungan</h3>
+
+          <div class="result-card">
+            <div class="result-item">
+              <span class="result-label">Total Pengeluaran</span>
+              <span class="result-value" id="total-pengeluaran">Rp 0</span>
+            </div>
+            <div class="result-item highlight">
+              <span class="result-label">Sisa untuk Investasi</span>
+              <span class="result-value" id="sisa-investasi">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="allocation-section">
+            <h4>Alokasi Ideal (50-30-20 Rule)</h4>
+            <div class="allocation-item">
+              <div class="allocation-header">
+                <span>Kebutuhan (50%)</span>
+                <span class="allocation-amount" id="needs-amount">Rp 0</span>
+              </div>
+              <div class="allocation-bar">
+                <div class="allocation-fill needs" id="needs-bar" style="width: 0%"></div>
+              </div>
+              <span class="allocation-status" id="needs-status">-</span>
+            </div>
+
+            <div class="allocation-item">
+              <div class="allocation-header">
+                <span>Keinginan (30%)</span>
+                <span class="allocation-amount" id="wants-amount">Rp 0</span>
+              </div>
+              <div class="allocation-bar">
+                <div class="allocation-fill wants" id="wants-bar" style="width: 0%"></div>
+              </div>
+              <span class="allocation-status" id="wants-status">-</span>
+            </div>
+
+            <div class="allocation-item">
+              <div class="allocation-header">
+                <span>Tabungan/Investasi (20%)</span>
+                <span class="allocation-amount" id="savings-amount">Rp 0</span>
+              </div>
+              <div class="allocation-bar">
+                <div class="allocation-fill savings" id="savings-bar" style="width: 0%"></div>
+              </div>
+              <span class="allocation-status" id="savings-status">-</span>
+            </div>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 NGINVest - Kelompok 5</p>
+    </footer>
+
+    <script src="asset/js/script.js"></script>
   </body>
 </html>
