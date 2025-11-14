@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Budget - nginvest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Kalkulator Budget</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="tips.html">Tips</a>
+        <a href="budget.html">Budget Calculator</a>
+        <a href="invest.html">Investment Calculator</a>
+      </nav>
+    </header>
+
+    <section class="content">
+      <label>Pemasukan:</label>
+      <input id="income" type="number" /><br />
+
+      <label>Pengeluaran:</label>
+      <input id="expense" type="number" /><br />
+
+      <button onclick="calcBudget()">Hitung</button>
+      <p id="budgetResult"></p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

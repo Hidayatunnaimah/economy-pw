@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Investasi - nginvest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Kalkulator Investasi</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="tips.html">Tips</a>
+        <a href="budget.html">Budget Calculator</a>
+        <a href="invest.html">Investment Calculator</a>
+      </nav>
+    </header>
+
+    <section class="content">
+      <label>Modal awal:</label>
+      <input id="awal" type="number" /><br />
+
+      <label>Bunga (% per tahun):</label>
+      <input id="bunga" type="number" /><br />
+
+      <label>Durasi (tahun):</label>
+      <input id="tahun" type="number" /><br />
+
+      <button onclick="calcInvest()">Hitung</button>
+      <p id="investResult"></p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
